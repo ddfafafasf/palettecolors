@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌈 ChromaGen | Gerador de Paletas</title>
+  <link rel="icon" href="https://i.pinimg.com/originals/0e/09/a3/0e09a308fa462bfba5343b09167df50c.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="glass-container">
+    <header>
+      <h1><span class="gradient-text">ChromaGen</span></h1>
+      <p class="subtitle">Pressione <span class="space-key">ESPAÇO</span> para gerar paletas incríveis</p>
+    </header>
+
+    <div class="controls">
+      <button onclick="undo()" class="control-btn" title="Desfazer">
+        <i class="fas fa-undo-alt"></i>
+      </button>
+      <button onclick="redo()" class="control-btn" title="Refazer">
+        <i class="fas fa-redo-alt"></i>
+      </button>
+      <button onclick="toggleGradient()" class="control-btn gradient-btn" title="Modo Gradiente">
+        <i class="fas fa-gradient"></i>
+        <span id="gradient-status">OFF</span>
+      </button>
+      <button onclick="exportPalette()" class="control-btn" title="Exportar Paleta">
+        <i class="fas fa-file-export"></i>
+      </button>
+      <div class="file-input-wrapper">
+        <input type="file" id="importFile" onchange="importPalette(event)">
+        <label for="importFile" class="control-btn import-label" title="Importar Paleta">
+          <i class="fas fa-file-import"></i>
+        </label>
+      </div>
+    </div>
+
+    <div class="palette-container">
+      <div class="palette" id="palette"></div>
+    </div>
+
+    <footer>
+      <p>Clique em uma cor para copiar • Segure Shift ao clicar para bloquear</p>
+    </footer>
+  </div>
+
+  <div class="notification" id="notification"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
